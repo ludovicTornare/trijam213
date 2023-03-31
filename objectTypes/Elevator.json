@@ -1,0 +1,59 @@
+{
+	"name": "Elevator",
+	"plugin-id": "Sprite",
+	"sid": 865649730209982,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "VerrinHeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 440359845736950
+		},
+		{
+			"name": "IsUp",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 995624940231330
+		},
+		{
+			"name": "UpSec",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 952440348923021
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 827731,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 772457535526692,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

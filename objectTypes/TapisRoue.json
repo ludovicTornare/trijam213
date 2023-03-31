@@ -1,0 +1,20 @@
+{
+	"name": "TapisRoue",
+	"plugin-id": "TiledBg",
+	"sid": 813899900339228,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 100,
+		"height": 30,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2561332,
+		"useCollisionPoly": true
+	}
+}

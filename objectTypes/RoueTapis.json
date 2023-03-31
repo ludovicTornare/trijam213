@@ -1,0 +1,43 @@
+{
+	"name": "RoueTapis",
+	"plugin-id": "Sprite",
+	"sid": 566388533902410,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physique",
+			"sid": 771351406278404
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 30,
+						"height": 30,
+						"originX": 0.5440414507772021,
+						"originY": 0.5925925925925926,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9533855,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 411693641062579,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

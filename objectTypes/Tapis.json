@@ -1,0 +1,46 @@
+{
+	"name": "Tapis",
+	"plugin-id": "TiledBg",
+	"sid": 272703627449054,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "MovementActif",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 490353611136126
+		},
+		{
+			"name": "MovementToRight",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 806102060277386
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physique",
+			"sid": 834233021560330
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solide",
+			"sid": 675384637466103
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 250,
+		"height": 30,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2833057,
+		"useCollisionPoly": true
+	}
+}

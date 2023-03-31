@@ -3,9 +3,415 @@
 	"events": [
 		{
 			"eventType": "block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "is-overlapping-at-offset",
+					"objectClass": "Chassi",
+					"sid": 801943096703166,
+					"parameters": {
+						"object": "Tapis",
+						"offset-x": "1  * (Tapis.MovementToRight ? -1 : 1)",
+						"offset-y": "1"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Tapis",
+					"sid": 901646026264723,
+					"parameters": {
+						"instance-variable": "MovementActif"
+					}
+				}
+			],
 			"actions": [],
-			"sid": 555949199855808
+			"sid": 555949199855808,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tapis",
+							"sid": 730503149732802,
+							"parameters": {
+								"instance-variable": "MovementToRight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Chassi",
+							"sid": 379591911022720,
+							"behaviorType": "Plateforme",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 458874600240962
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tapis",
+							"sid": 131063995194947,
+							"parameters": {
+								"instance-variable": "MovementToRight"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Chassi",
+							"sid": 319811895786701,
+							"behaviorType": "Plateforme",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 380376013897033
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Chassi",
+					"sid": 406356337464490,
+					"parameters": {
+						"object": "Roues"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Chassi",
+					"sid": 939519013901474,
+					"parameters": {
+						"animation": "\"withRoue\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Roues",
+					"sid": 877964300555264,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 462899499249960
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 188304088843407,
+					"parameters": {
+						"interval-seconds": "random(7) + 3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Generator",
+					"sid": 289754682464470,
+					"parameters": {
+						"object": "Chassi",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 801941670343433
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Elevator",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Souris",
+							"sid": 918340887488175,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Elevator"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Elevator",
+							"sid": 422770313560018,
+							"parameters": {
+								"child": "Tapis",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Tapis",
+							"sid": 550145634420268,
+							"parameters": {
+								"child": "Verrin",
+								"which": "own"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Elevator",
+							"sid": 795744137517275,
+							"parameters": {
+								"instance-variable": "IsUp"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Elevator",
+							"sid": 891369229391291,
+							"parameters": {
+								"instance-variable": "IsUp",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Verrin",
+							"sid": 289755479048962,
+							"parameters": {
+								"width": "Verrin.Width",
+								"height": " Verrin.Height + Elevator.VerrinHeight"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Tapis",
+							"sid": 894010922478364,
+							"parameters": {
+								"y": "Tapis.Y - Elevator.VerrinHeight"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 214389544524872,
+							"parameters": {
+								"seconds": "Elevator.UpSec"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Tapis",
+							"sid": 380935365717104,
+							"parameters": {
+								"y": "Tapis.Y + Elevator.VerrinHeight"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Verrin",
+							"sid": 271260484042887,
+							"parameters": {
+								"width": "Verrin.Width",
+								"height": "Verrin.Height - Elevator.VerrinHeight"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Elevator",
+							"sid": 657273993653869,
+							"parameters": {
+								"instance-variable": "IsUp",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 279959405254216
+				}
+			],
+			"sid": 284080734724942
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Roues",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Souris",
+							"sid": 960724718295490,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "RoueBuilder"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "RoueBuilder",
+							"sid": 912816324947874,
+							"parameters": {
+								"child": "TapisRoue",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "TapisRoue",
+							"sid": 162741507248862,
+							"parameters": {
+								"child": "Verrin",
+								"which": "own"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RoueBuilder",
+							"sid": 385969485451984,
+							"parameters": {
+								"instance-variable": "IsUp"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "RoueBuilder",
+							"sid": 833680389751780,
+							"parameters": {
+								"instance-variable": "IsUp",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Verrin",
+							"sid": 942365796739921,
+							"parameters": {
+								"width": "Verrin.Width",
+								"height": " Verrin.Height + RoueBuilder.VerrinHeight"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Roues",
+							"sid": 503382152233502,
+							"parameters": {
+								"y": "Roues.Y - RoueBuilder.VerrinHeight"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "TapisRoue",
+							"sid": 863659536005024,
+							"parameters": {
+								"y": "TapisRoue.Y - RoueBuilder.VerrinHeight"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 364978814736116,
+							"parameters": {
+								"seconds": "RoueBuilder.UpSec"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "TapisRoue",
+							"sid": 441783452150126,
+							"parameters": {
+								"y": "TapisRoue.Y + RoueBuilder.VerrinHeight"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Roues",
+							"sid": 792264882591828,
+							"parameters": {
+								"y": "Roues.Y + RoueBuilder.VerrinHeight"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Verrin",
+							"sid": 440927001718953,
+							"parameters": {
+								"width": "Verrin.Width",
+								"height": "Verrin.Height - RoueBuilder.VerrinHeight"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 780579054746384,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "RoueBuilder",
+							"sid": 772728815351596,
+							"parameters": {
+								"instance-variable": "IsUp",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Roues",
+							"sid": 582829338832253,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 669951137194943
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-children",
+							"objectClass": "TapisRoue",
+							"sid": 727453163308435
+						}
+					],
+					"actions": [],
+					"sid": 677317660138166
+				}
+			],
+			"sid": 936124218870029
 		}
 	],
 	"sid": 279510034150381

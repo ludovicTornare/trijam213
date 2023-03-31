@@ -1,0 +1,59 @@
+{
+	"name": "RoueBuilder",
+	"plugin-id": "Sprite",
+	"sid": 499001103648044,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "IsUp",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 279945237269920
+		},
+		{
+			"name": "UpSec",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 974168392564131
+		},
+		{
+			"name": "VerrinHeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 404119959233474
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7869159,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 419363115522005,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

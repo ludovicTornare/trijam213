@@ -5,10 +5,64 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Souris",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Arrière-plan Répété",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physique",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Plate-forme",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solide",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
 	"uniqueId": "z6sm9vtehr0",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Generator",
+			"Tapis",
+			"Chassi",
+			"Elevator",
+			"Verrin",
+			"Souris",
+			"RoueTapis",
+			"RoueBuilder",
+			"TapisRoue",
+			"Roues"
+		],
 		"subfolders": []
 	},
 	"autosaveData": null,
@@ -180,7 +234,7 @@
 		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders"
 	},
-	"viewportWidth": 854,
-	"viewportHeight": 480,
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
 	"firstLayout": null
 }

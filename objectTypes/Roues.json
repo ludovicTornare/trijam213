@@ -1,0 +1,49 @@
+{
+	"name": "Roues",
+	"plugin-id": "Sprite",
+	"sid": 806081087963244,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 236,
+						"height": 68,
+						"originX": 0.5,
+						"originY": 0.9852941176470589,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8291051,
+						"collisionPoly": {
+							"points": [
+								0.1627118644067796,
+								0.5382352941176467,
+								0.8406779661016947,
+								0.5441176470588237,
+								0.8644067796610164,
+								0.8147058823529412,
+								0.14237288135593218,
+								0.7911764705882355
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 150137146375581,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
