@@ -1,5 +1,44 @@
 {
 	"name": "Feuille d'Evènements 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving",
+					"objectClass": "Xavier",
+					"sid": 766321728202662,
+					"behaviorType": "Plateforme"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-default-color",
+					"objectClass": "Ground",
+					"sid": 486489748590709,
+					"parameters": {
+						"color": "rgbEx(255, 0, 0)"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 344335136105848,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Ground",
+					"sid": 760718092630423,
+					"parameters": {
+						"color": "rgbEx(0, 0, 0)"
+					}
+				}
+			],
+			"sid": 555949199855808
+		}
+	],
 	"sid": 279510034150381
 }
