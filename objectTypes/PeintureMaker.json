@@ -1,9 +1,17 @@
 {
-	"name": "Roues",
+	"name": "PeintureMaker",
 	"plugin-id": "Sprite",
-	"sid": 806081087963244,
+	"sid": 692478521390814,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Color",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 884757227812677
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -11,19 +19,19 @@
 			{
 				"frames": [
 					{
-						"width": 622,
-						"height": 177,
-						"originX": 0.5128617363344051,
-						"originY": 2.3104021269524764,
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 526787,
+						"imageSpriteId": 8737085,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 150137146375581,
+				"sid": 596677563388324,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

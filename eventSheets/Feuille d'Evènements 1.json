@@ -5,139 +5,71 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-overlapping-at-offset",
-					"objectClass": "Chassi",
-					"sid": 801943096703166,
-					"parameters": {
-						"object": "Tapis",
-						"offset-x": "1  * (Tapis.MovementToRight ? -1 : 1)",
-						"offset-y": "1"
-					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "Tapis",
-					"sid": 901646026264723,
-					"parameters": {
-						"instance-variable": "MovementActif"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 555949199855808,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Tapis",
-							"sid": 730503149732802,
-							"parameters": {
-								"instance-variable": "MovementToRight"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "Chassi",
-							"sid": 379591911022720,
-							"behaviorType": "Plateforme",
-							"parameters": {
-								"control": "right"
-							}
-						}
-					],
-					"sid": 458874600240962
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Tapis",
-							"sid": 131063995194947,
-							"parameters": {
-								"instance-variable": "MovementToRight"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "Chassi",
-							"sid": 319811895786701,
-							"behaviorType": "Plateforme",
-							"parameters": {
-								"control": "left"
-							}
-						}
-					],
-					"sid": 380376013897033
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Chassi",
-					"sid": 406356337464490,
-					"parameters": {
-						"object": "Roues"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation",
-					"objectClass": "Chassi",
-					"sid": 939519013901474,
-					"parameters": {
-						"animation": "\"withRoue\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Roues",
-					"sid": 877964300555264,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 462899499249960
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 188304088843407,
+					"sid": 460912541587436,
 					"parameters": {
 						"interval-seconds": "random(7) + 3"
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 801941670343433,
+			"children": [
 				{
-					"id": "spawn-another-object",
-					"objectClass": "Generator",
-					"sid": 289754682464470,
-					"parameters": {
-						"object": "Chassi",
-						"layer": "0",
-						"image-point": "0",
-						"create-hierarchy": false
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 390602040156225,
+							"parameters": {
+								"first-value": "random(10)",
+								"comparison": 4,
+								"second-value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Generator",
+							"sid": 751250714088867,
+							"parameters": {
+								"object": "Remorque",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 571201866713078
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 972966058664837
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Generator",
+							"sid": 763357407132321,
+							"parameters": {
+								"object": "Truck",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 765510271586298
 				}
-			],
-			"sid": 801941670343433
+			]
 		},
 		{
 			"eventType": "group",
@@ -412,6 +344,448 @@
 				}
 			],
 			"sid": 936124218870029
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Truck",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Truck",
+							"sid": 759026372712613,
+							"parameters": {
+								"object": "Roues"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Truck",
+							"sid": 435729109805788,
+							"parameters": {
+								"animation": "\"withRoue\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Roues",
+							"sid": 894649545223039,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 983806859165885
+				}
+			],
+			"sid": 571252330104971
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Tapis",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tapis",
+							"sid": 768567986457770,
+							"parameters": {
+								"instance-variable": "MovementActif"
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Truck",
+							"sid": 884725190334588,
+							"parameters": {
+								"object": "Tapis",
+								"offset-x": "1  * (Tapis.MovementToRight ? -1 : 1)",
+								"offset-y": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 375149875592614,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Tapis",
+									"sid": 564869039709040,
+									"parameters": {
+										"instance-variable": "MovementToRight"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Truck",
+									"sid": 306566910954460,
+									"behaviorType": "Plateforme",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 983489807782954
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Tapis",
+									"sid": 784280702306015,
+									"parameters": {
+										"instance-variable": "MovementToRight"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Truck",
+									"sid": 528986537033346,
+									"behaviorType": "Plateforme",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 470048932876498
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Remorque",
+							"sid": 893331718788191,
+							"parameters": {
+								"object": "Tapis",
+								"offset-x": "1  * (Tapis.MovementToRight ? -1 : 1)",
+								"offset-y": "1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tapis",
+							"sid": 239878716988172,
+							"parameters": {
+								"instance-variable": "MovementActif"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 684104773092940,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Tapis",
+									"sid": 258439298881874,
+									"parameters": {
+										"instance-variable": "MovementToRight"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Remorque",
+									"sid": 188021933386699,
+									"behaviorType": "Plateforme",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 974472543889908
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Tapis",
+									"sid": 118786442442713,
+									"parameters": {
+										"instance-variable": "MovementToRight"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Remorque",
+									"sid": 882144352672276,
+									"behaviorType": "Plateforme",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 702275145548462
+						}
+					]
+				}
+			],
+			"sid": 778672721269034
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Remorque",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 277199599367647
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Remorque",
+					"sid": 148216454533308,
+					"parameters": {
+						"object": "Blocker"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Remorque",
+					"sid": 146891230270674,
+					"behaviorType": "Plateforme",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 621415530147341
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PeintureMaker",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Souris",
+							"sid": 876965402853799,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "PeintureMaker"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "PeintureMaker",
+							"sid": 706928175981782,
+							"parameters": {
+								"child": "Blocker",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "PeintureMaker",
+							"sid": 863936264498521,
+							"parameters": {
+								"child": "Painter",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 227243492850576,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Souris",
+									"sid": 787924145101560,
+									"parameters": {
+										"object": "PaintBtn"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 728328749316853,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Blocker",
+											"sid": 820801330925697,
+											"parameters": {
+												"object": "Remorque"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "Remorque",
+											"sid": 719360875432639,
+											"behaviorType": "Plateforme",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "Blocker",
+											"sid": 223085743143085,
+											"parameters": {
+												"collisions": "disabled"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Remorque",
+											"sid": 178028287664998,
+											"parameters": {
+												"animation": "PeintureMaker.Color",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 920133039763182
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Blocker",
+											"sid": 239925686942073,
+											"parameters": {
+												"object": "Remorque"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "Blocker",
+											"sid": 729412102475937,
+											"parameters": {
+												"collisions": "enabled"
+											}
+										}
+									],
+									"sid": 548953197165125
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Souris",
+									"sid": 913398635711394,
+									"parameters": {
+										"object": "PaintBtnBlue"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "PeintureMaker",
+									"sid": 601929621824169,
+									"parameters": {
+										"instance-variable": "Color",
+										"value": "\"blue\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Painter",
+									"sid": 542549408971023,
+									"parameters": {
+										"animation": "\"blue\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 899856891686913
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Souris",
+									"sid": 426816449554143,
+									"parameters": {
+										"object": "PaintBtnRed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "PeintureMaker",
+									"sid": 921049005284902,
+									"parameters": {
+										"instance-variable": "Color",
+										"value": "\"red\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Painter",
+									"sid": 328897580216557,
+									"parameters": {
+										"animation": "\"red\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 463063367318641
+						}
+					]
+				}
+			],
+			"sid": 713317590095048
 		}
 	],
 	"sid": 279510034150381

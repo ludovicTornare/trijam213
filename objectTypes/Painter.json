@@ -1,0 +1,84 @@
+{
+	"name": "Painter",
+	"plugin-id": "Sprite",
+	"sid": 340596121785051,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 94,
+						"height": 179,
+						"originX": 0.6808510638297872,
+						"originY": 0.2905027932960894,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7719107,
+						"collisionPoly": {
+							"points": [
+								0.010638297872340425,
+								0.00558659217877095,
+								0.9893617021276596,
+								0.00558659217877095,
+								0.9893617021276596,
+								0.9888268156424581,
+								0.010638297872340425,
+								0.9888268156424581
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 720047454734721,
+				"name": "Red",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 94,
+						"height": 179,
+						"originX": 0.5,
+						"originY": 0.5865921787709497,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2272572,
+						"collisionPoly": {
+							"points": [
+								0.010638297872340425,
+								0.00558659217877095,
+								0.9893617021276596,
+								0.00558659217877095,
+								0.9893617021276596,
+								0.994413407821229,
+								0.010638297872340425,
+								0.994413407821229
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 186276377268541,
+				"name": "Blue",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

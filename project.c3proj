@@ -54,14 +54,21 @@
 		"items": [
 			"Generator",
 			"Tapis",
-			"Chassi",
+			"Truck",
 			"Elevator",
 			"Verrin",
 			"Souris",
 			"RoueTapis",
 			"RoueBuilder",
 			"TapisRoue",
-			"Roues"
+			"Roues",
+			"Remorque",
+			"PeintureMaker",
+			"Blocker",
+			"PaintBtn",
+			"Painter",
+			"PaintBtnRed",
+			"PaintBtnBlue"
 		],
 		"subfolders": []
 	},
