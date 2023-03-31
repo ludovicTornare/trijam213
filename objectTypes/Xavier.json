@@ -1,0 +1,55 @@
+{
+	"name": "Xavier",
+	"plugin-id": "Sprite",
+	"sid": 899489105865432,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Plateforme",
+			"sid": 788562828281835
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4551388,
+						"collisionPoly": {
+							"points": [
+								0.22,
+								0.274,
+								0.8059999999999998,
+								0.262,
+								0.8579999999999999,
+								0.7259999999999998,
+								0.17600000000000002,
+								0.5679999999999996
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 292827706581149,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
