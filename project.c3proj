@@ -5,42 +5,10 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [
-		{
-			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "TiledBg",
-			"name": "Arrière-plan Répété",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Platform",
-			"name": "Plate-forme",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solide",
-			"author": "Scirra",
-			"bundled": false
-		}
-	],
+	"usedAddons": [],
 	"uniqueId": "z6sm9vtehr0",
 	"objectTypes": {
-		"items": [
-			"Xavier",
-			"Ground"
-		],
+		"items": [],
 		"subfolders": []
 	},
 	"autosaveData": null,
